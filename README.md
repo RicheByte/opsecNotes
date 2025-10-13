@@ -1,1 +1,3 @@
-# Notes and Awsome resocues about OPSEC
+# Notes and Awesome resources about OPSEC
+
+
