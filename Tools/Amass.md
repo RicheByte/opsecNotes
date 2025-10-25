@@ -1,0 +1,137 @@
+# Amass
+
+## What is the purpose of Amass?
+
+**Amass** is a proven, **open source** reconnaissance toolkit primarily used for network mapping and information gathering. It is widely used among security professionals and researchers to discover assets belonging to a target system and to map the external network space for preliminary analysis of the target system.
+
+**Here are the primary uses of Amass:**
+
+- **Subdomain Enumeration:** Amass is used to find subdomains of a target domain, essential for preliminary reconnaissance of the target system in the process of penetration testing and security assessment.
+    
+- **DNS Enumeration:** The Amass tool makes a DNS enumeration to help information security professionals collect data on DNS records for understanding the target's infrastructure. On the other hand, it provides very relevant information to security professionals or cybercriminals in mapping a domain's footprint and possible vulnerabilities, detailing hostnames, IP addresses, and DNS record types.
+    
+- **Asset Discovery:** Amass helps in the identification of several assets associated with a domain, their IP addresses, and services that go with them, so the attack surface of a target is visible.
+    
+- **Data Correlation:** Amass can collect, correlate and analyze intelligence data from various sources, such as passive and active reconnaissance, to provide a complete picture of a target. This makes it a more useful tool for security professionals or researchers.
+    
+- **Visualization:** It offers visualization to help users understand the relationships between discovered assets, therefore making it even easier to identify potential attack vectors. As a user-friendly security tool, amass is very useful because of these capabilities.
+    
+
+## Core Features
+
+- Subdomain Enumeration
+- Active and Passive Reconnaissance
+- Data Sources
+- DNS Resolution
+- Asset Discovery
+- Graph Visualization
+- Integration with Other Tools
+- Command-Line Interface
+
+## Data sources:
+
+- Amass uses multiple data sources to perform its research, including:
+- DNS Records
+- Certificate Transparency Logs
+- Search Engines
+- Web Archives
+- Public APIs
+- Passive DNS
+- GitHub and Other Code Repositories
+- Social Media and Other Platforms
+
+## Common Amass Commands
+
+### 1. Basic Usage
+
+- This command discovers subdomains for the specified target domain.
+
+```
+amass enum -d <target_domain>
+```
+
+### 2. File Input
+
+- This command reads a list of domains from a file and discovers subdomains for each one.
+
+```
+amass enum -df <file>
+```
+
+### 3. Output to File
+
+- This command saves the discovered subdomains in a specified output file. This gives the Amass tool the ability for post-test analysis.
+
+```
+amass enum -d <target_domain> -o <output_file>
+```
+
+### 4. Brute Force Subdomain Enumeration
+
+- Use brute forcing to discover subdomains with a wordlist.
+
+```
+amass enum -d <target_domain> -brute -w <wordlist>
+```
+
+### 5. DNS Resolution
+
+- Resolve discovered subdomains to their respective IP addresses.
+
+```
+amass resolve -d <target_domain>
+```
+
+### 6. Verbose Output
+
+- This command enables verbose output for detailed information about the enumeration process.
+
+```
+amass enum -d <target_domain> -v
+```
+
+### 7. Data Sources
+
+- Specify data sources to use during enumeration.
+
+```
+amass enum -d <target_domain> -src
+```
+
+### 8. Help and Usage Information
+
+- Displays help information, including available commands and options for using Amass.
+
+```
+amass -h
+```
+
+Alternative usage:
+
+```
+amass --help
+```
+
+## Output Examples of Amass Commands
+
+|Command|Example Usage|Function|Output Example|
+|---|---|---|---|
+|Basic Usage|`amass enum -d example.com`|Discovers subdomains for the specified target domain.|`Subdomains found: sub1.example.com, sub2.example.com`|
+|File Input|`amass enum -df domains.txt`|Reads a list of domains from a file and discovers subdomains for each one.|`Testing domains from domains.txt...`|
+|Output to File|`amass enum -d example.com -o results.txt`|Saves the discovered subdomains to a specified output file.|`Results saved to results.txt`|
+|JSON Output|`amass enum -d example.com -o results.json`|Saves the discovered subdomains in JSON format.|`Results saved in JSON format to results.json`|
+|CSV Output|`amass enum -d example.com -o results.csv`|Saves the discovered subdomains in CSV format.|`Results saved in CSV format to results.csv`|
+|Verbose Output|`amass enum -d example.com -v`|Enables verbose output for detailed information about the discovery process.|`Verbose mode enabled: ...`|
+|Silent Mode|`amass enum -d example.com -silent`|Suppresses output to display only errors.|`Errors: ...`|
+|Brute Force Subdomain Enumeration|`amass enum -d example.com -brute -w wordlist.txt`|Uses brute forcing to discover subdomains with a wordlist.|`Brute forcing subdomains using wordlist.txt...`|
+|DNS Resolution|`amass resolve -d example.com`|Resolves discovered subdomains to their corresponding IP addresses.|`Resolved: sub1.example.com -> 192.0.2.1`|
+|Include Specific Domain|`amass enum -d example.com -include sub.example.com`|Includes specific domains during the enumeration process.|`Including sub.example.com in the results`|
+|Exclude Specific Domain|`amass enum -d example.com -exclude sub.example.com`|Excludes specific domains from the enumeration process.|`Excluding sub.example.com from the results`|
+|Rate Limit|`amass enum -d example.com -rl 100`|Limits the number of requests per second during enumeration.|`Rate limit set to 100 requests per second`|
+|Timeout Configuration|`amass enum -d example.com -timeout 10`|Sets a timeout for requests to avoid hanging.|`Timeout set to 10 seconds`|
+|Data Sources|`amass enum -d example.com -src`|Specifies data sources to use during enumeration.|`Using data sources: ...`|
+|Passive Mode|`amass enum -passive -d example.com`|Conducts passive enumeration without making direct requests.|`Passive enumeration results: ...`|
+|Active Mode|`amass enum -active -d example.com`|Conducts active enumeration by querying DNS and other services.|`Active enumeration results: ...`|
+|Version Information|`amass -version`|Displays the current version of Amass installed.|`Amass version 3.0.0`|
+|Output Format|`amass enum -d example.com -o results.txt -format json`|Specifies the output format when saving results.|`Results saved in specified format to results.txt`|
+
