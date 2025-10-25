@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Theory/OWASP Top 10/INSECURE DESIGN - THE ARCHITECTURAL APOCALYPSE.md",
-                "mode": "preview",
+                "file": "Tools/Aircrack-ng.md",
+                "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "INSECURE DESIGN - THE ARCHITECTURAL APOCALYPSE"
+              "title": "Aircrack-ng"
             }
           }
         ]
@@ -171,13 +171,18 @@
   },
   "active": "e3c66eac4918af62",
   "lastOpenFiles": [
+    "Tools/Tool Tactics.md",
+    "Tools/Aircrack-ng.md",
+    "README.md",
+    "Tools",
     "prompts.md",
-    "Theory/OWASP Top 10/INSECURE DESIGN - THE ARCHITECTURAL APOCALYPSE.md",
+    "Theory/OWASP Top 10/BROKEN ACCESS CONTROL - THE COMPLETE FUCKING MASTERCLASS.md",
     "Theory/OWASP Top 10/The OWASP Top 10.md",
+    "Untitled.md",
+    "Theory/OWASP Top 10/SECURITY MISCONFIGURATION - THE LAZY ADMIN'S GOLDMINE.md",
+    "Theory/OWASP Top 10/INSECURE DESIGN - THE ARCHITECTURAL APOCALYPSE.md",
     "Theory/OWASP Top 10/INJECTION - THE COMPLETE FUCKING MASTERCLASS.md",
     "Theory/OWASP Top 10/CRYPTOGRAPHIC FAILURES - THE COMPLETE FUCKING BREAKDOWN.md",
-    "Theory/OWASP Top 10/BROKEN ACCESS CONTROL - THE COMPLETE FUCKING MASTERCLASS.md",
-    "README.md",
     "Theory/OWASP Top 10",
     "Theory"
   ]
