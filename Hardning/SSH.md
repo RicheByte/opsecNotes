@@ -1,0 +1,97 @@
+# SSH (Secure Shell)
+
+This advanced guide is crafted for system administrators and security experts who are committed to enhancing the security of their **SSH (Secure Shell)** servers. It encompasses a broad spectrum of hardening techniques, ranging from fundamental configuration adjustments to complex security mechanisms, with detailed explanations for each recommendation.
+
+## Enforce SSH Protocol 2
+
+SSH Protocol 2 is the latest version and offers improved security features over Protocol 1, including more robust encryption algorithms and host-based authentication. Enforcing its use ensures that communications are better protected.
+
+```
+# /etc/ssh/sshd_configProtocol 2
+```
+
+## Disable Root Login
+
+Disabling root login over SSH reduces the risk of unauthorized access by requiring users to authenticate as a non-privileged user before escalating privileges. This minimizes the potential impact of brute force attacks.
+
+```
+# /etc/ssh/sshd_configPermitRootLogin no
+```
+
+## Employ Key-Based Authentication
+
+Key-based authentication is more secure than password-based authentication, as it relies on cryptographic keys that are much harder to brute force. It significantly enhances the security of SSH access.
+
+```
+# /etc/ssh/sshd_configPasswordAuthentication noAuthenticationMethods publickey
+```
+
+## Restrict SSH Access to Specific Users
+
+Limiting SSH access to specific users reduces the attack surface by ensuring only authorized personnel have remote access, enhancing overall system security.
+
+```
+# /etc/ssh/sshd_configAllowUsers specified_user
+```
+
+## Alter the Default SSH Port
+
+Changing the default SSH port (22) can help mitigate automated attacks and scans targeting default SSH ports, reducing the visibility to automated threats.
+
+```
+# /etc/ssh/sshd_configPort 2222
+```
+
+## Activate Fail2Ban
+
+Fail2Ban monitors login attempts to SSH and automatically bans IPs that exhibit malicious behavior, such as repeated failed login attempts, helping to protect against brute-force attacks.
+
+## Schedule SSH Key Rotation
+
+Regularly rotating SSH keys minimizes the risk of exposure and compromise, ensuring that access remains secure even if a key is somehow leaked or stolen.
+
+## Implement Two-Factor Authentication
+
+Two-factor authentication adds an extra layer of security by requiring a second form of verification beyond the SSH key, significantly reducing the risk of unauthorized access.
+
+```
+# /etc/ssh/sshd_configAuthenticationMethods publickey,keyboard-interactive
+```
+
+## Harden SSH Ciphers
+
+Specifying strong ciphers for SSH sessions enhances the encryption strength, protecting against cryptographic attacks that target weaker encryption algorithms.
+
+```
+# /etc/ssh/sshd_configCiphers aes256-ctr,aes192-ctr,aes128-ctr
+```
+
+## Limit SSH Sessions
+
+Limiting the number of concurrent SSH sessions per user can help prevent resource exhaustion and potential denial of service attacks.
+
+```
+# /etc/ssh/sshd_configMaxSessions 2
+```
+
+## Configure Idle Timeout
+
+Setting an idle timeout disconnects inactive sessions, reducing the risk of session hijacking and conserving system resources.
+
+```
+# /etc/ssh/sshd_configClientAliveInterval 300ClientAliveCountMax 0
+```
+
+## Use Security Extensions
+
+Security extensions like SELinux or AppArmor add an additional layer of security, enforcing strict access controls around the SSH service and further securing the system.
+
+## Monitoring and Maintenance
+
+## Audit SSH Access (Log Analysis)
+
+Regularly reviewing SSH access logs is crucial for detecting unauthorized access attempts and ensuring that access controls are effective.
+
+## Update SSH Software Regularly
+
+Keeping SSH server software up to date is essential for protecting against newly discovered vulnerabilities and maintaining a secure environment.
